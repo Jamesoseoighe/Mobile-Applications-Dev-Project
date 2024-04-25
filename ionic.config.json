@@ -1,0 +1,7 @@
+{
+  "name": "DoneDeal",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
