@@ -1,0 +1,27 @@
+ion-content {
+    --ion-background-color: #f8f8f8;
+  }
+  
+  ion-card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  ion-label {
+    color: #333333;
+    font-weight: bold;
+  }
+  
+  ion-input {
+    border: 1px solid #cccccc;
+  }
+  
+  ion-item {
+    --highlight-color-focused: transparent;
+  }
+  
+  ion-title {
+    font-weight: bold;
+    color: #ffffff;
+  }

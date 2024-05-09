@@ -1,0 +1,100 @@
+<ion-header >
+  <ion-toolbar color="danger">
+    <ion-title >DealDone</ion-title> 
+  </ion-toolbar>
+  
+  <ion-toolbar >
+    <ion-button color="danger" (click)="btnClicked4()" routerLink="/profile">Home<ion-icon slot="icon-only" name="home"></ion-icon></ion-button>
+    <ion-button color="danger" (click)="btnClicked()" routerLink="/profile">Profile<ion-icon slot="icon-only" name="people"></ion-icon></ion-button>
+    <ion-button color="danger" (click)="btnClicked2()" routerLink="/profile">Settings<ion-icon slot="icon-only" name="cog"></ion-icon></ion-button>
+    <ion-button color="danger" (click)="btnClicked3()" routerLink="/profile">About<ion-icon slot="icon-only" name="help"></ion-icon></ion-button>
+  </ion-toolbar>
+
+
+
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Seller Details</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-item>
+        <ion-label>Name:</ion-label>
+        <ion-input type="text" (ionChange)="updateSellerName($event)" [value]="seller.name"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Email:</ion-label>
+        <ion-input type="email" (ionChange)="updateSellerEmail($event)" [value]="seller.email"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Phone:</ion-label>
+        <ion-input type="tel" (ionChange)="updateSellerPhone($event)" [value]="seller.phone"></ion-input>
+      </ion-item>
+     
+      <ion-button color="danger" expand="full" (click)="saveSellerData()">Save Seller Profile</ion-button>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Car Details</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-item>
+        <ion-label>Car Brand:</ion-label>
+        <ion-input type="text" (ionChange)="updateCarBrand($event)" [value]="car.brand"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Model:</ion-label>
+        <ion-input type="text" (ionChange)="updateCarModel($event)" [value]="car.model"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Color:</ion-label>
+        <ion-input type="text" (ionChange)="updateCarColor($event)" [value]="car.color"></ion-input>
+      </ion-item>
+      
+      <ion-button expand="full" color="danger" (click)="saveCarData()">Save Car Details</ion-button>
+
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Display saved data -->
+  <!-- <ion-card *ngIf="savedSeller || savedCar">
+    <ion-card-header>
+      <ion-card-title>Saved Data</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item *ngIf="savedSeller">
+          <ion-label>Name:</ion-label>
+          <ion-text>{{ savedSeller.name }}</ion-text>
+        </ion-item>
+        <ion-item *ngIf="savedSeller">
+          <ion-label>Email:</ion-label>
+          <ion-text>{{ savedSeller.email }}</ion-text>
+        </ion-item>
+        <ion-item *ngIf="savedSeller">
+          <ion-label>Phone:</ion-label>
+          <ion-text>{{ savedSeller.phone }}</ion-text>
+        </ion-item>
+        <ion-item *ngIf="savedCar">
+          <ion-label>Car Brand:</ion-label>
+          <ion-text>{{ savedCar.brand }}</ion-text>
+        </ion-item>
+        <ion-item *ngIf="savedCar">
+          <ion-label>Model:</ion-label>
+          <ion-text>{{ savedCar.model }}</ion-text>
+        </ion-item>
+        <ion-item *ngIf="savedCar">
+          <ion-label>Color:</ion-label>
+          <ion-text>{{ savedCar.color }}</ion-text>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card> -->
+</ion-content>
+

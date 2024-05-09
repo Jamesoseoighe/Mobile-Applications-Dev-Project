@@ -1,20 +1,61 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
+<ion-header >
+  <ion-toolbar color="danger">
+    <ion-title >DealDone</ion-title> 
   </ion-toolbar>
+  
+  <ion-toolbar >
+    <ion-button color="danger" (click)="btnClicked4()" routerLink="/profile">Home<ion-icon slot="icon-only" name="home"></ion-icon></ion-button>
+    <ion-button color="danger"(click)="btnClicked()" routerLink="/profile">Profile<ion-icon slot="icon-only" name="people"></ion-icon></ion-button>
+    <ion-button color="danger" (click)="btnClicked2()" routerLink="/profile">Settings<ion-icon slot="icon-only" name="cog"></ion-icon></ion-button>
+    <ion-button color="danger"(click)="btnClicked3()" routerLink="/profile">About<ion-icon slot="icon-only" name="help"></ion-icon></ion-button>
+  </ion-toolbar>
+
+  <ion-toolbar>
+
+    <ion-searchbar [(ngModel)]="searchTerm" (ionChange)="search()"></ion-searchbar>
+  </ion-toolbar>
+
+    
+ 
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
+      <ion-title size="large">DealDone Marketplace</ion-title>
     </ion-toolbar>
   </ion-header>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+
+  
+
+ 
+  
+  <ion-card *ngFor="let car of filteredCars">
+
+    <!-- Display filtered cars 
+    <ion-card-header>
+      <ion-card-subtitle>{{car.make}}</ion-card-subtitle>
+      <ion-card-title>Model: {{car.model}}</ion-card-title>
+      <ion-label>Cylinders: {{car.cylinders}}</ion-label>
+      <ion-label>FuelType: {{car.fueltype1}}</ion-label>
+      <ion-label>Year Of Manufacture: {{car.year}}</ion-label>
+      </ion-card-header>
+      
+       <ion-list> 
+      <ion-item-group>
+      <ion-item-divider>
+      <ion-label>{{car.year}}</ion-label>
+      </ion-item-divider>
+      </ion-item-group>
+      </ion-list>
+
+-->
+    <img [src]="car.image" alt="{{ car.title }}" style="width: 100%;">
+    <ion-card-header>
+      <ion-card-subtitle>{{ car.title }}</ion-card-subtitle>
+      <ion-card-title>Start Production: {{ car.start_production }}</ion-card-title>
+      <ion-label>Class: {{ car.class }}</ion-label>
+    </ion-card-header>
+  </ion-card>
 </ion-content>

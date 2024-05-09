@@ -1,0 +1,53 @@
+<ion-header >
+  <ion-toolbar color="danger">
+    <ion-title >DealDone</ion-title> 
+  </ion-toolbar>
+  
+  <ion-toolbar >
+    <ion-button color="danger" (click)="btnClicked4()" routerLink="/profile">Home<ion-icon slot="icon-only" name="home"></ion-icon></ion-button>
+    <ion-button color="danger" (click)="btnClicked()" routerLink="/profile">Profile<ion-icon slot="icon-only" name="people"></ion-icon></ion-button>
+    <ion-button color="danger" (click)="btnClicked2()" routerLink="/profile">Settings<ion-icon slot="icon-only" name="cog"></ion-icon></ion-button>
+    <ion-button color="danger" (click)="btnClicked3()" routerLink="/profile">About<ion-icon slot="icon-only" name="help"></ion-icon></ion-button>
+  </ion-toolbar>
+
+  
+
+    
+ 
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="settingsForm" (ngSubmit)="saveSettings()">
+    <ion-list>
+      <!-- Push Notifications Section -->
+      <ion-item>
+        <ion-label>Push Notifications</ion-label>
+        <ion-toggle slot="end" formControlName="pushNotificationEnabled"></ion-toggle>
+      </ion-item>
+
+      <!-- Theme Selection Section -->
+      <ion-item>
+        <ion-label>Theme</ion-label>
+        <ion-button expand="block" (click)="toggleDarkMode()">Toggle Dark Mode</ion-button>
+      </ion-item>
+
+      <!-- Language Settings Section -->
+      <ion-item>
+        <ion-label>Language</ion-label>
+        <ion-select slot="end" formControlName="selectedLanguage">
+          <ion-select-option value="en">English</ion-select-option>
+          <ion-select-option value="fr">French</ion-select-option>
+          <ion-select-option value="es">Spanish</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <!-- Other Settings Sections -->
+      <!-- Add more settings sections as needed -->
+
+      <!-- Save Button -->
+      <ion-item>
+        <ion-button type="submit" expand="block">Save Settings</ion-button>
+      </ion-item>
+    </ion-list>
+  </form>
+</ion-content>

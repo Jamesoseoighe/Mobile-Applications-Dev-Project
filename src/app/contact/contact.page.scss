@@ -1,0 +1,29 @@
+/* Light Theme */
+:root {
+  --ion-background-color: #ffffff;
+  --ion-text-color: #000000;
+}
+
+/* Dark Theme */
+:root.dark-theme {
+  --ion-background-color: #121212;
+  --ion-text-color: #ffffff;
+}
+
+/* Light mode styles */
+body.light-mode {
+  --background-color: #ffffff;
+  --text-color: #000000;
+}
+
+/* Dark mode styles */
+body.dark-mode {
+  --background-color: #000000;
+  --text-color: #ffffff;
+}
+
+/* Apply common styles */
+ion-content {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
